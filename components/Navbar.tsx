@@ -21,7 +21,7 @@ const Navbar = () => {
             <DropdownMenu>
                 <DropdownMenuTrigger className='focus:outline-none'>
                     <Avatar>
-                    <AvatarImage src='../img/batman.png' alt='nick' />
+                    <AvatarImage src='../img/icon.png' alt='nick' />
                     <AvatarFallback className='text-[#ff4500] bg-[#eee]'>NR</AvatarFallback>
                 </Avatar>    
                 </DropdownMenuTrigger>
