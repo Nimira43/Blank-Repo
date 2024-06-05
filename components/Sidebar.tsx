@@ -10,28 +10,48 @@ import {
   CommandShortcut,
 } from "@/components/ui/command"
 import Link from "next/link";
-import { User, LayoutDashboard, Newspaper, Folders, CreditCard, Settings } from "lucide-react";
+import { User, LayoutDashboard, Newspaper, Folders, CreditCard, Settings, LayoutDashboardIcon } from "lucide-react";
 
 const Sidebar = () => {
     return ( 
-        <Command>
+        <Command className='bg-[#eee] text-[#ff4500] rounded-none'>
             <CommandInput placeholder="Type a command or search..." />
             <CommandList>
                 <CommandEmpty>No results found.</CommandEmpty>
-                <CommandGroup heading="Suggestions">
-                <CommandItem>Calendar</CommandItem>
-                <CommandItem>Search Emoji</CommandItem>
-                <CommandItem>Calculator</CommandItem>
+                <CommandGroup heading="Suggestions" className="text-[#ff4500]">
+                    <CommandItem>
+                        <LayoutDashboard className='mr-2 h-4 w-4' />
+                        <Link href='/'>Dashboard</Link>
+                    </CommandItem>
+                    <CommandItem>
+                        <Newspaper className='mr-2 h-4 w-4' />
+                        <Link href='/post'>Posts</Link>
+                    </CommandItem>
+                    <CommandItem>
+                        <Folders className='mr-2 h-4 w-4' />
+                        <Link href='#'>Categories</Link>
+                    </CommandItem>
                 </CommandGroup>
                 <CommandSeparator />
-                <CommandGroup heading="Settings">
-                <CommandItem>Profile</CommandItem>
-                <CommandItem>Billing</CommandItem>
-                <CommandItem>Settings</CommandItem>
+                <CommandGroup heading="Settings" className="text-[#ff4500]">
+                    <CommandItem>
+                        <User className='mr-2 h-4 w-4' />
+                        <span>Profile</span>
+                        <CommandShortcut>^P</CommandShortcut>
+                    </CommandItem>
+                    <CommandItem>
+                        <CreditCard className='mr-2 h-4 w-4' />
+                        <span>Invoices</span>
+                        <CommandShortcut>^I</CommandShortcut>
+                    </CommandItem>
+                    <CommandItem>
+                        <Settings className='mr-2 h-4 w-4' />
+                        <span>Settings</span>
+                        <CommandShortcut>^S</CommandShortcut>
+                    </CommandItem>
                 </CommandGroup>
             </CommandList>
         </Command>
-
      )
 }
  
