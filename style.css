@@ -55,3 +55,8 @@ section h2 {
   clip-path: circle(150px at 100% 100%);
 }
 
+.circle-1 h2,
+.circle-2 h2 {
+  color: transparent;
+  -webkit-text-stroke: 5px #111;
+}
